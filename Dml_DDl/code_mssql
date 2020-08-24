@@ -1,0 +1,29 @@
+create database abhinav;
+go
+use abhinav;
+go
+-------------------
+create table Employee(id int, nvarchar(100));
+go
+insert into Employee values(1,'Abhinav')
+insert into Employee values(2,'Gajula')
+go
+------------------
+ALTER TABLE Employee
+add salary int;
+go
+------------------
+truncate table Employee;
+go
+------------------
+drop database abhinav;
+go
+-----------------
+
+
+
+
+ 
+
+
+

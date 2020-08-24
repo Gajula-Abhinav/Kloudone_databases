@@ -1,0 +1,26 @@
+CREATE OR REPLACE FUNCTION totalRecords ()  
+RETURNS integer AS $total$  
+declare  
+    total integer;  
+BEGIN  
+   SELECT count(*) into total FROM EMPLOYEES;  
+   RETURN total;  
+END;  
+$total$ LANGUAGE plpgsql;  
+----------------------------
+//Modifying Functions
+
+CREATE OR REPLACE FUNCTION totalRecords ()  
+RETURNS integer AS
+$BODY$ 
+declare  
+    total integer;  
+BEGIN  
+   SELECT count(*) into total FROM EMPLOYEES;  
+   RETURN total;  
+END;  
+$BODY$
+LANGUAGE plpgsql VOLATILE;
+COST 100;
+ALTER FUNCTION totalrecords() OWNER TO postgres;
+-----------------------------  

@@ -1,0 +1,62 @@
+create database client;
+use client;
+----------------------
+create table public.model(pk int, name varchar(255), last_name varchar(255), country varchar(255));
+------------------------------
+insert into public.model values(1,"sai","ab","India");
+insert into public.model values(2,"sagar","abhi","USA");
+insert into public.model values(3,"maria","sajan","Australia");
+----------------------------------
+select * from public.model
+order by asc
+--------------------------
+update model set lat_name='Los Angeles' where pk=3;
+-------------------------
+delete from model where country="India";
+--------------------------------------
+CREATE TABLE AUDIT(  
+    EMP_ID INT NOT NULL,  
+    ENTRY_DATE TEXT NOT NULL  
+);  
+---------------------------
+insert into audit values(1,2016-05-08);
+insert into audit values(2,2015-08-15);
+--------------------------------------
+
+A
+A
+B
+B
+B
+A
+C
+insert into audit values(2,2015-05-15 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

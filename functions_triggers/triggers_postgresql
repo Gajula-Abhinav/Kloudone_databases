@@ -1,0 +1,14 @@
+//Creating a trigger
+
+CREATE OR REPLACE FUNCTION auditlogfunc() RETURNS TRIGGER AS $example_table$  
+    BEGIN  
+        INSERT INTO AUDIT(EMP_ID, ENTRY_DATE) VALUES (new.ID, current_timestamp);  
+        RETURN NEW;   
+    END;  
+$example_table$ LANGUAGE plpgsql;
+---------------------------------------
+//Manipulating the trigger
+
+CREATE TRIGGER example_trigger 
+AFTER INSERT ON model
+FOR EACH ROW EXECUTE PROCEDURE auditlogfunc();    
